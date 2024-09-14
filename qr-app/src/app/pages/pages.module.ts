@@ -10,6 +10,7 @@ import { ClassesComponent } from './classes/classes.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { RecoverypassComponent } from './recoverypass/recoverypass.component';
+import { FormsModule, NgModel } from '@angular/forms';
 
 
 @NgModule({
@@ -26,6 +27,9 @@ import { RecoverypassComponent } from './recoverypass/recoverypass.component';
     RouterLink,
     IonicModule,
     SharedModule,
+    FormsModule,
+
+
   ]
 })
 export class PagesModule { }

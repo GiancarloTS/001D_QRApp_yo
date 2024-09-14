@@ -1,4 +1,8 @@
-<p>
-  profile works!
-</p>
-<app-nav-bar></app-nav-bar>
+<div *ngIf="!user || user === ''; else logeado"> <!-- si tiene un valor vacio o null -->
+  <app-validar-login></app-validar-login>
+</div>
+
+<ng-template #logeado> <!-- Si esta datos en el servicio cuenta -->
+  <p>La variable tiene un valor: {{ user }}</p> <!-- Aqui poni tu codigo Cachorro -->
+  <app-nav-bar></app-nav-bar>
+</ng-template>

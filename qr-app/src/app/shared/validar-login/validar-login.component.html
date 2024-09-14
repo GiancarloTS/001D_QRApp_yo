@@ -1,0 +1,37 @@
+<body>
+<div id="boxLogin">
+<h1>QR App</h1>
+<h3>Login</h3>
+
+  <div id="inputs">
+    <ion-item>
+      <ion-input
+        [(ngModel)]="user"
+        label="Nombre de usuario"
+        placeholder="Usuario"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+
+        [(ngModel)]="pass"
+        label="Contraseña"
+        type="password"
+        value="Contraseña"
+      ></ion-input>
+    </ion-item>
+
+    <!-- <ion-toggle>Profesor</ion-toggle><br /><br /> -->
+    <ion-item id="tipo">
+    <ion-radio-group value="type">
+      <ion-radio value="grapes" class="opcion">Estudiante <ion-icon class="icons" name="body-outline"></ion-icon></ion-radio>
+      <ion-radio value="strawberries" class="opcion">Profesor <ion-icon  class="icons" name="school-outline"></ion-icon></ion-radio>
+    </ion-radio-group>
+    </ion-item>
+
+
+    <ion-button (click)="IniciarSesion()">Inciar sesion</ion-button>
+  </div>
+</div>
+</body>
+ <!-- helperText="Ayuda" para recuperar contraseña -->
