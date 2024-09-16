@@ -1,36 +1,38 @@
 <body>
-<div id="boxLogin">
+<div  id="boxLogin">
 <h1>QR App</h1>
-<h3>Login</h3>
+<h2>Login</h2>
 
   <div id="inputs">
-    <ion-item>
+    <ion-item class="cajas">
       <ion-input
         [(ngModel)]="user"
-        label="Nombre de usuario"
-        placeholder="Usuario"
+        label="Usuario"
+        labelPlacement="floating"
       ></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item class="cajas">
       <ion-input
-
+        labelPlacement="floating"
         [(ngModel)]="pass"
         label="Contraseña"
         type="password"
-        value="Contraseña"
+
       ></ion-input>
+
     </ion-item>
+
 
     <!-- <ion-toggle>Profesor</ion-toggle><br /><br /> -->
-    <ion-item id="tipo">
-    <ion-radio-group value="type">
-      <ion-radio value="grapes" class="opcion">Estudiante <ion-icon class="icons" name="body-outline"></ion-icon></ion-radio>
-      <ion-radio value="strawberries" class="opcion">Profesor <ion-icon  class="icons" name="school-outline"></ion-icon></ion-radio>
+
+    <ion-radio-group value="type" [(ngModel)]="type" id="tipo" class="cajas">
+      <ion-radio  value="Estudiante" class="opcion">Estudiante <ion-icon class="icons" name="body-outline"></ion-icon></ion-radio>
+      <ion-radio   value="Profesor" class="opcion">Profesor <ion-icon  class="icons" name="school-outline"></ion-icon></ion-radio>
     </ion-radio-group>
-    </ion-item>
+  <div id="botn">
 
-
-    <ion-button (click)="IniciarSesion()">Inciar sesion</ion-button>
+    <ion-button (click)="IniciarSesion()" >Inciar sesion</ion-button>
+  </div>
   </div>
 </div>
 </body>

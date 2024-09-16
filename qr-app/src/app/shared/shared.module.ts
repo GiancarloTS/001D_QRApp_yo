@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule, IonNav } from '@ionic/angular';
+import { createAnimation, IonicModule, IonNav } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { IonRouterOutlet } from '@ionic/angular/common';
 import { ValidarLoginComponent } from './validar-login/validar-login.component';
 import { FormsModule } from '@angular/forms';
+import { ɵBrowserAnimationBuilder } from '@angular/animations';
 
 
 

@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class CuentaService {
   private usernameSubject = new BehaviorSubject<string>('');
   private passwordSubject = new BehaviorSubject<string>('');
-  private typeSubject = new BehaviorSubject<boolean>(false);
+  private typeSubject = new BehaviorSubject<string>('');
   user$ = this.usernameSubject.asObservable();
   pass$ = this.passwordSubject.asObservable();
   tipo$ = this.typeSubject.asObservable();
@@ -25,10 +25,10 @@ export class CuentaService {
     GetPassword(): string|null{
       return this.passwordSubject.getValue();
     }
-    SetType(tipo: boolean){
+    SetType(tipo: string){
       this.typeSubject.next(tipo);
     }
-    GetType():boolean{
+    GetType():string{
       return this.typeSubject.getValue();
     }
 }

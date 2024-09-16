@@ -7,47 +7,66 @@ body {
   align-items: center;
   background-color: #1d1d1d;
   font-family: Arial, sans-serif;
+  color: #f1f3ef;
+  text-shadow: #86aa5e 3px 2px 3px;
 }
-
+.cajas {
+  --background: #657c48;
+  animation: fadeInGrow 0.9s ease-in forwards; /* Duración de 2s */
+}
 #boxLogin {
   background-color: #1b1b1b;
-
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 1000000px 30px #b9c8a842;
   width: 90%;
   max-width: 400px;
   text-align: center;
-  margin:auto;
+  margin: auto;
   vertical-align: middle;
+  background-color: #b9c8a8;
+  animation: fadeInGrow 0.8s ease-in forwards; /* Duración de 2s */
 }
 
 /* Estilos para que los inputs se adapten bien dentro del cuadrado */
 #inputs ion-item {
-  margin-bottom: 15px;
+  margin: 5px;
+
+  animation: fadeInGrow 0.9s ease-in forwards; /* Duración de 2s */
 }
-#tipo{
+.opcion {
+  padding: 0.25rem;
+  background-color: #7c9c57;
+  --color-checked: #ffffff;
+  padding: 10px;
 
 }
-.opcion{
-  padding: 0.75rem;
-}
-.icons{
-   font-size: 1.2rem;
-   justify-items: center;
-   justify-content: center;
+.icons {
+  font-size: 1.2rem;
+  justify-items: center;
+  justify-content: center;
   display: flex;
-   align-self: center;
-}
-#inputs ion-input {
-  width: 100%;
+  align-self: center;
 }
 
+#tipo {
+  --background: #86aa5e;
+  animation: fadeInGrow 1.9 ease-in forwards; /* Duración de 2s */
+}
 /* Estilos del botón */
 ion-button {
-  width: 100%;
+  width: 75%;
+  box-shadow: 0px 16px 25px 7px #86aa5e;
+  --background: #86aa5e;
+  --border-color: #586d3f;
+  color: white;
+  animation: fadeInGrow 1s ease-in forwards; /* Duración de 2s */
+  animation: radioExpand 2s ease-in;
+  border-radius: 15px;
 }
-
+#botn {
+  padding: 10px;
+}
 /* Hacer que los textos H1 y H3 luzcan bien */
 h1 {
   font-size: 2rem;
@@ -62,5 +81,30 @@ h3 {
 @media (min-width: 768px) {
   #boxLogin {
     width: 400px; /* Establece un ancho fijo en pantallas más grandes */
+  }
+}
+/* Animaciones  */
+
+@keyframes fadeInGrow {
+  0% {
+    opacity: 0.1; /* Comienza invisible */
+  }
+  100% {
+    opacity: 1; /* Completamente visible */
+  }
+}
+
+@keyframes radioExpand {
+  0% {
+    transform: scale(1);
+    background-color: var(--color-unchecked);
+  }
+  50% {
+    transform: scale(1.04);
+    background-color: var(--color-checked);
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--color-checked);
   }
 }
