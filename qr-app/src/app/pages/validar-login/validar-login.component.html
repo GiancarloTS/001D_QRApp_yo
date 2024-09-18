@@ -31,8 +31,17 @@
     </ion-radio-group>
   <div id="botn">
 
-    <ion-button (click)="IniciarSesion()" >Inciar sesion</ion-button>
+    <ion-button (click)="IniciarSesion(user,pass)" >
+      @if (isLoading) {
+        <ion-spinner name="dots"></ion-spinner>
+      }@else {
+        Inciar sesion
+      }
+    </ion-button>
   </div>
+  <ion-text color="danger" *ngIf="loginFailed">
+    Usuario o clave incorrectos.
+  </ion-text>
   </div>
 </div>
 </body>

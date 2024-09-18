@@ -14,6 +14,10 @@ body {
   --background: #657c48;
   animation: fadeInGrow 0.9s ease-in forwards; /* Duración de 2s */
 }
+ion-spinner {
+  width: 130px;
+  height: 30px;
+}
 #boxLogin {
   background-color: #1b1b1b;
   padding: 20px;

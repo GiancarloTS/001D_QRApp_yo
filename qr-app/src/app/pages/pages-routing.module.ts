@@ -4,14 +4,15 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ClassesComponent } from './classes/classes.component';
 import { RecoverypassComponent } from './recoverypass/recoverypass.component';
-import { LoginComponent } from './login/login.component';
+import { ValidarLoginComponent } from './validar-login/validar-login.component';
+import { wardGuard } from '../guard/ward.guard';
 
 const routes: Routes = [ /* Aqui se declaran las rutas de los componentes */
-  {path: '', component:HomeComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path:'clases', component: ClassesComponent},
+  {path: '', component:HomeComponent,canActivate: [wardGuard]},
+  {path: 'profile', component: ProfileComponent, canActivate: [wardGuard]},
+  {path:'clases', component: ClassesComponent,canActivate: [wardGuard]},
   {path: 'recovery',component: RecoverypassComponent},
-  {path:'login',component:LoginComponent},
+  {path:'login',component:ValidarLoginComponent},
 
 
 ];

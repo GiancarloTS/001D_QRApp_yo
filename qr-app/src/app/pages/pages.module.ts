@@ -8,9 +8,9 @@ import { RouterLink } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { ClassesComponent } from './classes/classes.component';
 import { ProfileComponent } from './profile/profile.component';
-import { LoginComponent } from './login/login.component';
 import { RecoverypassComponent } from './recoverypass/recoverypass.component';
 import { FormsModule, NgModel } from '@angular/forms';
+import { ValidarLoginComponent } from './validar-login/validar-login.component';
 
 
 @NgModule({
@@ -18,8 +18,9 @@ import { FormsModule, NgModel } from '@angular/forms';
     HomeComponent,
     ClassesComponent,
     ProfileComponent,
-    LoginComponent,
     RecoverypassComponent,
+    ValidarLoginComponent,
+
   ],
   imports: [
     CommonModule,
