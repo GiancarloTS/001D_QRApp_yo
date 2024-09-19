@@ -1,22 +1,30 @@
 <ion-toolbar>
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home" routerLink="/">
-      <ion-icon name="home-outline"></ion-icon>
-      Inicio
-    </ion-tab-button>
-    <ion-tab-button tab="radio" routerLink="/clases">
-      <ion-icon name="library-outline"></ion-icon>
-      Clases
-    </ion-tab-button>
-    <ion-tab-button tab="library" >
-      <ion-icon name="qr-code-outline"></ion-icon>
-       QR Cam
-    </ion-tab-button>
-    <ion-tab-button tab="search" routerLink="/profile">
-      <ion-icon name="person-outline"></ion-icon>
-      Perfil
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home" routerLink="/">
+        <ion-icon name="home-outline"></ion-icon>
+        Inicio
+      </ion-tab-button>
+      <ion-tab-button tab="radio" routerLink="/clases">
+        <ion-icon name="library-outline"></ion-icon>
+        Clases
+      </ion-tab-button>
+      @if (tipo == 'Estudiante'){
+      <ion-tab-button tab="library">
+        <ion-icon name="qr-code-outline"></ion-icon>
+        QR Cam
+      </ion-tab-button>
+      } @if (tipo == 'Profesor'){
+      <ion-tab-button tab="library">
+        <ion-icon name="qr-code-outline"></ion-icon>
+        Generar QR
+      </ion-tab-button>
+      }
+
+      <ion-tab-button tab="search" routerLink="/profile">
+        <ion-icon name="person-outline"></ion-icon>
+        Perfil
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-toolbar>

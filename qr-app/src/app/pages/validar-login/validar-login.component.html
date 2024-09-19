@@ -1,48 +1,44 @@
 <body>
-<div  id="boxLogin">
-<h1>QR App</h1>
-<h2>Login</h2>
+  <div id="boxLogin">
+    <div id="cajalogo"><h1>QR App <img src="assets/img/LogoBlack.png" id="logo"></h1> </div>
+    <h2>Login</h2>
 
-  <div id="inputs">
-    <ion-item class="cajas">
-      <ion-input
-        [(ngModel)]="user"
-        label="Usuario"
-        labelPlacement="floating"
-      ></ion-input>
-    </ion-item>
-    <ion-item class="cajas">
-      <ion-input
-        labelPlacement="floating"
-        [(ngModel)]="pass"
-        label="Contraseña"
-        type="password"
+    <div id="inputs">
+      <ion-item class="cajas">
+        <ion-input
+          [(ngModel)]="user"
+          label="Usuario"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item class="cajas">
+        <ion-input
+          labelPlacement="floating"
+          [(ngModel)]="pass"
+          label="Contraseña"
+          type="password"
+        ></ion-input>
+      </ion-item>
 
-      ></ion-input>
+      <!-- <ion-toggle>Profesor</ion-toggle><br /><br /> -->
 
-    </ion-item>
-
-
-    <!-- <ion-toggle>Profesor</ion-toggle><br /><br /> -->
-
-    <ion-radio-group value="type" [(ngModel)]="type" id="tipo" class="cajas">
+      <!--   <ion-radio-group value="type" [(ngModel)]="type" id="tipo" class="cajas">
       <ion-radio  value="Estudiante" class="opcion">Estudiante <ion-icon class="icons" name="body-outline"></ion-icon></ion-radio>
       <ion-radio   value="Profesor" class="opcion">Profesor <ion-icon  class="icons" name="school-outline"></ion-icon></ion-radio>
-    </ion-radio-group>
-  <div id="botn">
-
-    <ion-button (click)="IniciarSesion(user,pass)" >
-      @if (isLoading) {
-        <ion-spinner name="dots"></ion-spinner>
-      }@else {
-        Inciar sesion
-      }
-    </ion-button>
+    </ion-radio-group> -->
+      <div id="botn">
+        <ion-button (click)="IniciarSesion(user, pass)">
+          @if (isLoading) {
+          <ion-spinner name="dots"></ion-spinner>
+          }@else { Iniciar sesion }
+        </ion-button>
+      </div>
+      <div *ngIf="loginFailed">
+        <ion-item id="MensajeFail" [button]="true" routerLink="/recovery">
+          Usuario o clave incorrectos.Recuperar Contraseña?
+        </ion-item>
+      </div>
+    </div>
   </div>
-  <ion-text color="danger" *ngIf="loginFailed">
-    Usuario o clave incorrectos.
-  </ion-text>
-  </div>
-</div>
 </body>
- <!-- helperText="Ayuda" para recuperar contraseña -->
+<!-- helperText="Ayuda" para recuperar contraseña -->

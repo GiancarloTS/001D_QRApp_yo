@@ -23,6 +23,7 @@ export class ValidarLoginComponent  implements OnInit {
 
   user! : string ;
   subscripcionCuenta!: Subscription;
+
   pass! : string;
   type : string ="Estudiante";
 
@@ -31,11 +32,7 @@ export class ValidarLoginComponent  implements OnInit {
 
 
 
-  constructor(private router: Router) {;
-
-
-
-  }
+  constructor(private router: Router) {}
 
   isLoading: boolean = false; // Variable para mostrar el estado de carga
   async IniciarSesion(usuario: string, clave: string): Promise<void> { // Simular la autenticación con un retraso de 4 segundos

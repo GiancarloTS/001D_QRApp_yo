@@ -1,7 +1,30 @@
-<ion-item>
-  <ion-input label="Usuario" labelPlacement="stacked" placeholder="Enter text"></ion-input>
-
-  <ion-input label="Nueva Contraseña" labelPlacement="stacked" placeholder="Enter text"></ion-input>
-</ion-item>
-<ion-button>Default</ion-button>
-<app-nav-bar></app-nav-bar>
+<body>
+  <div id="boxRecover">
+    <div id="cajalogo">
+      <h1>QR App <img src="assets/img/LogoLight.png" id="logo" /></h1>
+    </div>
+    <h3>Recuperar Contraseña</h3>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="user"
+        label="Usuario"
+        labelPlacement="stacked"
+        placeholder="Ingresa el usuario"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="pass"
+        label="Nueva Contraseña"
+        labelPlacement="stacked"
+        placeholder="Ingresa la nueva contraseña"
+      ></ion-input>
+    </ion-item>
+    <ion-button (click)="cambiarContra(user, pass)"
+      >Recuperar Contraseña</ion-button
+    >
+    <div *ngIf="SearchFailed">
+      <ion-item id="MensajeFail"> El nombre de usuario no coinicide </ion-item>
+    </div>
+  </div>
+</body>
