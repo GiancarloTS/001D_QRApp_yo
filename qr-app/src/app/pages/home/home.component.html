@@ -1,4 +1,20 @@
 
-  <p>La variable tiene un valor: {{ user }}</p> <!-- Aqui poni tu codigo Cachorro -->
-  <app-nav-bar></app-nav-bar>
 
+<ion-content>
+  <div class="welcome-message">
+    <h1>Bienvenido, {{ user }}</h1>
+    <p>¡Esta es tu página de inicio!</p>
+    <p>Desde aquí puedes acceder a las diferentes secciones de la app.</p>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información Importante</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Asegúrate de registrar tu asistencia cuando llegues a clase.</p>
+      <p>Utiliza el código QR que el profesor generará para ello.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<app-nav-bar></app-nav-bar>
