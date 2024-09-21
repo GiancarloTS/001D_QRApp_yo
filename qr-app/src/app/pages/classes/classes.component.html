@@ -1,4 +1,18 @@
+<div class="container">
+  <h1>Clases</h1>
+  <div *ngIf="user">
+    <p>Aquí están las clases disponibles:</p>
+    <!-- Aquí puedes agregar una lista de clases o cualquier otro contenido relevante -->
+  </div>
 
-  <p>La variable tiene un valor: {{ user }}</p> <!-- Aqui poni tu codigo Cachorro -->
-  <app-nav-bar></app-nav-bar>
+  <div *ngIf="!user">
+    <p>Por favor, inicia sesión para ver las clases.</p>
+  </div>
+</div>
 
+<!-- Contenedor scrollable para la imagen del horario -->
+<div class="horario-container">
+  <img src="assets/img/Horario.png" alt="Horario de clases" class="horario-imagen">
+</div>
+
+<app-nav-bar></app-nav-bar>

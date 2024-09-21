@@ -1,9 +1,27 @@
-  <app-nav-bar></app-nav-bar>
-  <div class="profile-container">
-    <h1>Perfil de Usuario</h1>
-    <p>Bienvenido, {{ user }}</p>
-    <div class="user-details">
 
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div *ngIf="!user || user === ''; else logeado">
+      <app-validar-login></app-validar-login> <!-- Componente para redirigir al login si no está logueado -->
     </div>
-  </div>
 
+    <ng-template #logeado>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Bienvenido, {{ user }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <!-- Información del usuario -->
+          <p><strong>Nombre de usuario:</strong> {{ user }}</p>
+          <!-- Puedes agregar más detalles aquí -->
+        </ion-card-content>
+      </ion-card>
+      <app-nav-bar></app-nav-bar> <!-- Tu navbar al final -->
+    </ng-template>
+  </ion-content>
+  <app-nav-bar></app-nav-bar>

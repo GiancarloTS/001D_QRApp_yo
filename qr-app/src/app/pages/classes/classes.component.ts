@@ -7,17 +7,16 @@ import { CuentaService } from 'src/app/services/cuenta.service';
   templateUrl: './classes.component.html',
   styleUrls: ['./classes.component.scss'],
 })
-export class ClassesComponent  implements OnInit {
+export class ClassesComponent implements OnInit {
   cuenta = inject(CuentaService);
-  user! : String | null;
+  user!: string | null;
   subscripcionCuenta!: Subscription;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.subscripcionCuenta = this.cuenta.user$.subscribe(cuenta => {
       this.user = cuenta;
-    })
+    });
   }
-
 }
