@@ -1,53 +1,54 @@
 /* Estilos generales para centrar todo en el medio de la pantalla */
 body {
-  margin: 0px;
-  height: 100vh; /* Para asegurar que cubra toda la pantalla */
+  height: 100%;
+  margin: 0;
   display: flex;
-  justify-content: center; /* Alinea horizontalmente en el centro */
-  align-items: center; /* Alin
+  justify-content: center;
+  align-items: center;
+  background-color: #1d1d1d;
+  font-family: Arial, sans-serif;
+  color: #f1f3ef;
+  text-shadow: #86aa5e 3px 2px 3px;
 }
-#cajalogo {
-  position: relative; /* Necesario para que la imagen se posicione respecto al contenedor */
-  text-align: center; /* Centra el texto horizontalmente */
-  padding: 30px;
-}
-ion-input{
+ion-input {
   padding-top: 5px;
-  --background:#292929;
-}
-ion-item{
-  padding: 5px;
-  --background:#292929;
-}
-ion-button{
+  --background: #292929;
+  --highlight-color-valid:#ffffff;
 
+}
+ion-item {
+  padding: 5px;
+  --background: #292929;
+}
+ion-button {
 }
 
 #logo {
   position: absolute;
   top: 50%; /* Alinea verticalmente la imagen */
   left: 50%; /* Alinea horizontalmente la imagen */
-  transform: translate(-50%, -50%); /* Ajusta para centrar la imagen completamente */
+  transform: translate(-50%,-50%); /* Ajusta para centrar la imagen completamente */
   z-index: -1; /* Envía la imagen detrás del texto */
-  opacity: 0.9; /* Ajusta la opacidad para que el texto sea legible sobre la imagen */
-  width: 80px; /* Ajusta el tamaño de la imagen según sea necesario */
+  opacity: 0.6; /* Ajusta la opacidad para que el texto sea legible sobre la imagen */
+  width: 109px; /* Ajusta el tamaño de la imagen según sea necesario */
 }
-h3{
-padding-top: 10px;
+h3 {
+  padding-top: 20px;
 }
 h1 {
   position: relative; /* Asegura que el texto esté por encima de la imagen */
 }
 #boxRecover {
   background-color: #1b1b1b;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 1000000px 30px #b9c8a842;
-  width: 50%;
-  max-width: 450px;
+  box-shadow: 0px 0px 1000000px 30px #b9c8a865;
+  width: 90%;
+  max-width: 400px;
   text-align: center;
+  margin: auto;
   vertical-align: middle;
-  animation: fadeInGrow 0.8s ease-in forwards; /* Duración de 2s */
+  animation: fadeInGrow 0.5s ease-in forwards; /* Duración de 2s */
 }
 
 /* Estilos para que los inputs se adapten bien dentro del cuadrado */
@@ -58,18 +59,21 @@ ion-item {
 }
 /* Estilos del botón */
 ion-button {
-  width: 50%;
-  box-shadow: 0px 4,5px 5px #ffffff;
+  width: 75%;
+  box-shadow: 0px 4, 5px 5px #ffffff;
   --background: #86aa5e;
   --border-color: ;
   color: white;
   animation: fadeInGrow 1s ease-in forwards; /* Duración de 2s */
   animation: radioExpand 2s ease-in;
   border-radius: 15px;
-  padding-top: 15px;
 }
 #botn {
   padding: 10px;
+}
+.cajas {
+  animation: fadeInGrow 0.9s ease-in forwards; /* Duración de 2s */
+  border-radius: 30px;
 }
 #MensajeFail {
   --background: #464646;
@@ -110,7 +114,7 @@ h3 {
     background-color: var(--color-unchecked);
   }
   50% {
-    transform: scale(1.04);
+    transform: scale(1.02);
     background-color: var(--color-checked);
   }
   100% {

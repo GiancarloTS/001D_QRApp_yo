@@ -1,6 +1,8 @@
 <body>
   <div id="boxLogin">
-    <div id="cajalogo"><h1>QR App <img src="assets/img/LogoBlack.png" id="logo"></h1> </div>
+    <div id="cajalogo">
+      <h1>QR App <img src="assets/img/LogoBlack.png" id="logo" /></h1>
+    </div>
     <h2>Login</h2>
 
     <div id="inputs">
@@ -20,12 +22,6 @@
         ></ion-input>
       </ion-item>
 
-      <!-- <ion-toggle>Profesor</ion-toggle><br /><br /> -->
-
-      <!--   <ion-radio-group value="type" [(ngModel)]="type" id="tipo" class="cajas">
-      <ion-radio  value="Estudiante" class="opcion">Estudiante <ion-icon class="icons" name="body-outline"></ion-icon></ion-radio>
-      <ion-radio   value="Profesor" class="opcion">Profesor <ion-icon  class="icons" name="school-outline"></ion-icon></ion-radio>
-    </ion-radio-group> -->
       <div id="botn">
         <ion-button (click)="IniciarSesion(user, pass)">
           @if (isLoading) {

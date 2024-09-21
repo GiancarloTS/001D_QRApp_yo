@@ -11,8 +11,13 @@ body {
   text-shadow: #86aa5e 3px 2px 3px;
 }
 .cajas {
-  --background: #657c48;
+  --background: #8faf68;
   animation: fadeInGrow 0.9s ease-in forwards; /* Duración de 2s */
+  border-radius: 30px;
+  padding: 5px;
+  --highlight-color-valid:#8faf68;
+  --background-focused:#8faf68;
+  --border-color:#8faf68;
 }
 @media (min-width: 768px) {
   #boxLogin {
@@ -31,7 +36,7 @@ ion-spinner {
   background-color: #1b1b1b;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 1000000px 30px #b9c8a842;
+  box-shadow: 0px 0px 1000000px 30px rgba(185, 200, 168, 0.418);
   width: 90%;
   max-width: 400px;
   text-align: center;
@@ -42,16 +47,9 @@ ion-spinner {
 }
 
 /* Estilos para que los inputs se adapten bien dentro del cuadrado */
-#inputs ion-item {
-  margin: 5px;
 
-  animation: fadeInGrow 0.9s ease-in forwards; /* Duración de 2s */
-}
-.opcion {
-  padding: 0.25rem;
-  background-color: #7c9c57;
-  --color-checked: #ffffff;
-  padding: 10px;
+ion-input{
+  --highlight-color-valid:#ffffff;
 
 }
 .icons {
@@ -62,10 +60,7 @@ ion-spinner {
   align-self: center;
 }
 
-#tipo {
-  --background: #86aa5e;
-  animation: fadeInGrow 1.9 ease-in forwards; /* Duración de 2s */
-}
+
 /* Estilos del botón */
 ion-button {
   width: 75%;
@@ -95,6 +90,8 @@ ion-button {
 h1 {
   position: relative; /* Asegura que el texto esté por encima de la imagen */
   padding-top: 10px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 #botn {
   padding: 10px;
@@ -108,14 +105,10 @@ h1 {
 
 }
 /* Hacer que los textos H1 y H3 luzcan bien */
-h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
 
 h2 {
   font-size: 1.5rem;
-  margin-top: 2.0rem;
+  padding-top: 10px;
 }
 
 @media (min-width: 768px) {
