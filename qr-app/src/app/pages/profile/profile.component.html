@@ -1,27 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil Estudiante</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Bienvenido, {{ studentName }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>ID Estudiante:</strong> {{ studentId }}</p>
+      <p><strong>Curso:</strong> {{ studentCourse }}</p>
+      <ion-button (click)="editProfile()">Modificar Perfil</ion-button>
+      <ion-button (click)="registerAttendance()">Registrar Asistencia</ion-button>
+    </ion-card-content>
+  </ion-card>
 
-  <ion-content>
-    <div *ngIf="!user || user === ''; else logeado">
-      <app-validar-login></app-validar-login> <!-- Componente para redirigir al login si no está logueado -->
-    </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Historial de Asistencia</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Aquí podrías mostrar un gráfico o una lista -->
+      <p>Aquí se mostrará el historial de asistencia.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
 
-    <ng-template #logeado>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Bienvenido, {{ user }}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <!-- Información del usuario -->
-          <p><strong>Nombre de usuario:</strong> {{ user }}</p>
-          <!-- Puedes agregar más detalles aquí -->
-        </ion-card-content>
-      </ion-card>
-      <app-nav-bar></app-nav-bar> <!-- Tu navbar al final -->
-    </ng-template>
-  </ion-content>
-  <app-nav-bar></app-nav-bar>
+<app-nav-bar></app-nav-bar>

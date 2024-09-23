@@ -1,5 +1,4 @@
-import { Component, inject, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { CuentaService } from 'src/app/services/cuenta.service';
 
 @Component({
@@ -7,20 +6,23 @@ import { CuentaService } from 'src/app/services/cuenta.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
-export class ProfileComponent implements OnInit, OnDestroy {
-  cuenta = inject(CuentaService);
-  user!: String | null;
-  subscripcionCuenta!: Subscription;
+export class ProfileComponent implements OnInit {
+  studentName: string | null = null;
+  studentId: string = '12345';
+  studentCourse: string = '1º Medio'; // Puedes cambiarlo según sea necesario
 
-  constructor() { }
+  constructor(private cuentaService: CuentaService) {}
 
   ngOnInit() {
-    this.subscripcionCuenta = this.cuenta.user$.subscribe(cuenta => {
-      this.user = cuenta;
-    });
+    this.studentName = this.cuentaService.GetUsername();
   }
 
-  ngOnDestroy() {
-    this.subscripcionCuenta.unsubscribe(); // Desuscribirse para evitar memory leaks.
+  editProfile() {
+    // Lógica para editar el perfil
+    console.log('Modificar perfil');
+  }
+
+  registerAttendance() {
+    console.log(`Asistencia registrada para ${this.studentName}`);
   }
 }
