@@ -10,12 +10,12 @@
         Clases
       </ion-tab-button>
       @if (tipo == 'Estudiante'){
-      <ion-tab-button tab="library">
+      <ion-tab-button tab="library" routerLink="/camara">
         <ion-icon name="qr-code-outline"></ion-icon>
         QR Cam
       </ion-tab-button>
       } @if (tipo == 'Profesor'){
-      <ion-tab-button tab="library">
+      <ion-tab-button tab="library" routerLink="/qr">
         <ion-icon name="qr-code-outline"></ion-icon>
         Generar QR
       </ion-tab-button>

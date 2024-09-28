@@ -1,3 +1,4 @@
+import { CamaraComponent } from './camara/camara.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -11,6 +12,7 @@ import { ClassesComponent } from './classes/classes.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RecoverypassComponent } from './recoverypass/recoverypass.component';
 import { ValidarLoginComponent } from './validar-login/validar-login.component';
+import { QrComponent } from './qr/qr.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { ValidarLoginComponent } from './validar-login/validar-login.component';
     ProfileComponent,
     RecoverypassComponent,
     ValidarLoginComponent,
+    CamaraComponent,
+    QrComponent,
 
   ],
   imports: [

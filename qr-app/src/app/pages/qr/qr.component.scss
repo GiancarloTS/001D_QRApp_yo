@@ -1,0 +1,16 @@
+#QR{
+  max-width: 100%;         /* Ajusta la imagen al tamaño del contenedor sin distorsionarla */
+
+}
+
+#imgcontainer{
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;
+  height: 100vh;
+}
+@media (min-width: 768px) {
+  #QR {
+    width: 400px; /* Establece un ancho fijo en pantallas más grandes */
+  }
+}
