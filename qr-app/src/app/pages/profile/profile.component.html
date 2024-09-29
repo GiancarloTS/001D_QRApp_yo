@@ -13,7 +13,7 @@
       <p><strong>ID Estudiante:</strong> {{ studentId }}</p>
       <p><strong>Curso:</strong> {{ studentCourse }}</p>
       <ion-button (click)="editProfile()">Modificar Perfil</ion-button>
-      <ion-button (click)="registerAttendance()">Registrar Asistencia</ion-button>
+      <ion-button (click)="logout()" color="danger">Cerrar Sesión</ion-button>
     </ion-card-content>
   </ion-card>
 
@@ -22,10 +22,8 @@
       <ion-card-title>Historial de Asistencia</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <!-- Aquí podrías mostrar un gráfico o una lista -->
       <p>Aquí se mostrará el historial de asistencia.</p>
     </ion-card-content>
   </ion-card>
 </ion-content>
-
 <app-nav-bar></app-nav-bar>
