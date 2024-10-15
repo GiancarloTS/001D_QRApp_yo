@@ -1,0 +1,174 @@
+<body>
+  <div id="boxLogin">
+    <div id="cajalogo">
+      <h1>RegistrAPP<img src="assets/img/LogoBlack.png" id="logo" /></h1>
+    </div>
+    <h2>Registro</h2>
+
+    <div id="inputs">
+      <ion-item class="cajas">
+        <ion-input
+          [(ngModel)]="user"
+          label="Usuario"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item class="cajas">
+        <ion-input
+          [(ngModel)]="user"
+          label="Nombre completo"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item class="cajas">
+        <ion-input
+          labelPlacement="floating"
+          [(ngModel)]="pass"
+          label="Contraseña"
+          type="password"
+        ></ion-input>
+      </ion-item>
+      <ion-item id="select-list">
+        <ion-select aria-label="Carrera" placeholder="Seleccione carrera"   [(ngModel)]="type">
+          <!-- Área de Tecnología de la Información y Comunicación -->
+          <ion-select-option value="Analista Programador"
+            >Analista Programador</ion-select-option
+          >
+          <ion-select-option value="Ingeniería en Informática"
+            >Ingeniería en Informática</ion-select-option
+          >
+          <ion-select-option value="Ingeniería en Ciberseguridad"
+            >Ingeniería en Ciberseguridad</ion-select-option
+          >
+          <ion-select-option value="Ingeniería en Conectividad y Redes"
+            >Ingeniería en Conectividad y Redes</ion-select-option
+          >
+          <ion-select-option value="Técnico en Conectividad y Redes"
+            >Técnico en Conectividad y Redes</ion-select-option
+          >
+
+          <!-- Área de Administración y Negocios -->
+          <ion-select-option value="Ingeniería en Administración de Empresas"
+            >Ingeniería en Administración de Empresas</ion-select-option
+          >
+          <ion-select-option value="Técnico en Administración de Empresas"
+            >Técnico en Administración de Empresas</ion-select-option
+          >
+          <ion-select-option value="Contador Auditor"
+            >Contador Auditor</ion-select-option
+          >
+          <ion-select-option value="Técnico en Gestión Logística"
+            >Técnico en Gestión Logística</ion-select-option
+          >
+          <ion-select-option value="Ingeniería en Marketing"
+            >Ingeniería en Marketing</ion-select-option
+          >
+
+          <!-- Área de Salud -->
+          <ion-select-option value="Técnico en Enfermería"
+            >Técnico en Enfermería</ion-select-option
+          >
+          <ion-select-option value="Técnico en Odontología"
+            >Técnico en Odontología</ion-select-option
+          >
+          <ion-select-option
+            value="Técnico en Laboratorio Clínico, Banco de Sangre y Radiología"
+            >Técnico en Laboratorio Clínico, Banco de Sangre y
+            Radiología</ion-select-option
+          >
+          <ion-select-option value="Técnico en Fisioterapia"
+            >Técnico en Fisioterapia</ion-select-option
+          >
+          <ion-select-option value="Técnico en Farmacia"
+            >Técnico en Farmacia</ion-select-option
+          >
+
+          <!-- Área de Comunicación -->
+          <ion-select-option value="Publicidad">Publicidad</ion-select-option>
+          <ion-select-option value="Diseño Gráfico"
+            >Diseño Gráfico</ion-select-option
+          >
+          <ion-select-option value="Animación Digital"
+            >Animación Digital</ion-select-option
+          >
+          <ion-select-option value="Periodismo">Periodismo</ion-select-option>
+          <ion-select-option value="Producción Audiovisual"
+            >Producción Audiovisual</ion-select-option
+          >
+
+          <!-- Área de Ingeniería y Recursos Naturales -->
+          <ion-select-option value="Ingeniería en Electricidad"
+            >Ingeniería en Electricidad</ion-select-option
+          >
+          <ion-select-option
+            value="Ingeniería en Automatización y Control Industrial"
+            >Ingeniería en Automatización y Control
+            Industrial</ion-select-option
+          >
+          <ion-select-option value="Ingeniería en Prevención de Riesgos"
+            >Ingeniería en Prevención de Riesgos</ion-select-option
+          >
+          <ion-select-option value="Técnico en Mantenimiento Electromecánico"
+            >Técnico en Mantenimiento Electromecánico</ion-select-option
+          >
+          <ion-select-option value="Técnico en Minería"
+            >Técnico en Minería</ion-select-option
+          >
+
+          <!-- Área de Construcción -->
+          <ion-select-option value="Ingeniería en Construcción"
+            >Ingeniería en Construcción</ion-select-option
+          >
+          <ion-select-option value="Técnico en Construcción"
+            >Técnico en Construcción</ion-select-option
+          >
+          <ion-select-option value="Técnico en Edificación"
+            >Técnico en Edificación</ion-select-option
+          >
+
+          <!-- Área de Gastronomía -->
+          <ion-select-option value="Gastronomía Internacional"
+            >Gastronomía Internacional</ion-select-option
+          >
+          <ion-select-option value="Gastronomía">Gastronomía</ion-select-option>
+          <ion-select-option value="Administración Hotelera"
+            >Administración Hotelera</ion-select-option
+          >
+
+          <!-- Área de Diseño -->
+          <ion-select-option value="Diseño de Vestuario"
+            >Diseño de Vestuario</ion-select-option
+          >
+          <ion-select-option value="Diseño de Interiores"
+            >Diseño de Interiores</ion-select-option
+          >
+          <ion-select-option value="Diseño Industrial"
+            >Diseño Industrial</ion-select-option
+          >
+
+          <!-- Área de Sonido y Música -->
+          <ion-select-option value="Ingeniería en Sonido"
+            >Ingeniería en Sonido</ion-select-option
+          >
+          <ion-select-option value="Técnico en Sonido"
+            >Técnico en Sonido</ion-select-option
+          >
+          <ion-select-option value="Producción Musical"
+            >Producción Musical</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+      <ion-radio-group   [(ngModel)]="type">
+        <ion-radio>Profesor</ion-radio>
+        <ion-radio>Estudiante</ion-radio>
+      </ion-radio-group>
+      <div id="botn">
+        <ion-button>
+          @if (isLoading) {
+          <ion-spinner name="dots"></ion-spinner>
+          }@else { Registarse }
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</body>

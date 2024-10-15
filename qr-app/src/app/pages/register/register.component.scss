@@ -1,0 +1,154 @@
+/* Estilos generales para centrar todo en el medio de la pantalla */
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d1d1d;
+  font-family: Arial, sans-serif;
+  color: #f1f3ef;
+  text-shadow: #5a7240 3px 2px 3px;
+}
+.cajas {
+  --background: #8faf68;
+  animation: fadeInGrow 0.9s ease-in forwards; /* Duración de 2s */
+  border-radius: 30px;
+  padding: 5px;
+  --highlight-color-valid:#8faf68;
+  --background-focused:#8faf68;
+  --border-color:#8faf68;
+}
+@media (min-width: 768px) {
+  #boxLogin {
+    width: 400px; /* Establece un ancho fijo en pantallas más grandes */
+  }
+}
+ion-text{
+  text-shadow: #000000 4px 4px 103px;
+  z-index: 100000;
+}
+ion-spinner {
+  width: 130px;
+  height: 30px;
+}
+#boxLogin {
+  background-color: #1b1b1b;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 1000000px 30px rgba(185, 200, 168, 0.418);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  margin: auto;
+  vertical-align: middle;
+  background-color: #a8bb93;
+  animation: fadeInGrow 0.8s ease-in forwards; /* Duración de 2s */
+}
+
+/* Estilos para que los inputs se adapten bien dentro del cuadrado */
+
+ion-input{
+  --highlight-color-valid:#ffffff;
+
+}
+ion-radio{
+  padding: 5px;
+}
+.icons {
+  font-size: 1.2rem;
+  justify-items: center;
+  justify-content: center;
+  display: flex;
+  align-self: center;
+}
+
+#select-list{
+ padding: 5px;
+ --background: #86aa5e;
+ --border-color: #86aa5e;
+ --color:#ffffff;
+ --highlight-color-valid:#ffffff;
+ --placeholder-color:#ffffff;
+ --placeholder-opacity:100%;
+}
+/* Estilos del botón */
+ion-button {
+  width: 75%;
+  box-shadow: 0px 1px 3px #86aa5e;
+  --background: #86aa5e;
+  --border-color:#86aa5e ;
+  color: white;
+  animation: fadeInGrow 1s ease-in forwards; /* Duración de 2s */
+  animation: radioExpand 2s ease-in;
+  border-radius: 15px;
+}
+#cajalogo {
+  position: relative; /* Necesario para que la imagen se posicione respecto al contenedor */
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+#logo {
+  position: absolute;
+  top: 50%; /* Alinea verticalmente la imagen */
+  left: 50%; /* Alinea horizontalmente la imagen */
+  transform: translate(-50%, -50%); /* Ajusta para centrar la imagen completamente */
+  z-index: -1; /* Envía la imagen detrás del texto */
+  opacity: 0.6; /* Ajusta la opacidad para que el texto sea legible sobre la imagen */
+  width: 109px; /* Ajusta el tamaño de la imagen según sea necesario */
+}
+
+h1 {
+  position: relative; /* Asegura que el texto esté por encima de la imagen */
+  padding-top: 10px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+#botn {
+  padding: 10px;
+}
+#MensajeFail{
+  --background:#9AB082;
+  z-index: 100000;
+  --border-color:#9AB082;
+  margin: 1px;
+  color: #f05024;
+
+}
+/* Hacer que los textos H1 y H3 luzcan bien */
+
+h2 {
+  font-size: 1.5rem;
+  padding-top: 10px;
+}
+
+@media (min-width: 768px) {
+  #boxLogin {
+    width: 400px; /* Establece un ancho fijo en pantallas más grandes */
+  }
+}
+/* Animaciones  */
+
+@keyframes fadeInGrow {
+  0% {
+    opacity: 0.1; /* Comienza invisible */
+  }
+  100% {
+    opacity: 1; /* Completamente visible */
+  }
+}
+
+@keyframes radioExpand {
+  0% {
+    transform: scale(1);
+    background-color: var(--color-unchecked);
+  }
+  50% {
+    transform: scale(1.04);
+    background-color: var(--color-checked);
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--color-checked);
+  }
+}

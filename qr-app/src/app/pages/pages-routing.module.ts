@@ -8,6 +8,7 @@ import { ValidarLoginComponent } from './validar-login/validar-login.component';
 import { wardGuard } from '../guard/ward.guard';
 import { CamaraComponent } from './camara/camara.component';
 import { QrComponent } from './qr/qr.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [ /* Aqui se declaran las rutas de los componentes */
   {path: '', component:HomeComponent,canActivate: [wardGuard]},
@@ -17,7 +18,7 @@ const routes: Routes = [ /* Aqui se declaran las rutas de los componentes */
   {path:'login',component:ValidarLoginComponent},
   {path:'camara',component:CamaraComponent,canActivate: [wardGuard]},
   {path:'qr',component:QrComponent,canActivate: [wardGuard]},
-
+  {path:'register',component:RegisterComponent},
 
 ];
 

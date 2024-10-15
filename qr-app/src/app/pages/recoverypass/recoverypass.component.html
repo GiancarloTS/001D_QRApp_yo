@@ -6,7 +6,7 @@
     <h3>Recuperar Contraseña</h3>
     <ion-item class="cajas">
       <ion-input
-        [(ngModel)]="user"
+
         label="Usuario"
         labelPlacement="stacked"
         placeholder="Ingresa el usuario"
@@ -14,16 +14,15 @@
     </ion-item>
     <ion-item class="cajas">
       <ion-input
-        [(ngModel)]="pass"
+
         label="Nueva Contraseña"
         labelPlacement="stacked"
         placeholder="Ingresa la nueva contraseña"
       ></ion-input>
     </ion-item>
-    <ion-button (click)="cambiarContra(user, pass)"
-      >Recuperar Contraseña</ion-button
-    >
-    <div *ngIf="SearchFailed">
+    <ion-button>
+      >Recuperar Contraseña</ion-button>
+    <div >
       <ion-item id="MensajeFail"> El nombre de usuario no coinicide </ion-item>
     </div>
   </div>

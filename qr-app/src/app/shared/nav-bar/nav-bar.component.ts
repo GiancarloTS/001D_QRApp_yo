@@ -12,17 +12,17 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavBarComponent  implements OnInit {
 
-  tipo!:string
+  // tipo!:string
 
-  constructor() { }
-  private CuentaService = inject(AuthService);
+  // constructor() { }
+  // private CuentaService = inject(AuthService);
 
   SubscriptionCuentaService!: Subscription;
   ngOnInit(){
-    this.SubscriptionCuentaService = this.CuentaService.tipo$.subscribe(tipo => {
-      this.tipo = tipo;
-      console.log(tipo);
-    })
+    // this.SubscriptionCuentaService = this.CuentaService.tipo$.subscribe(tipo => {
+    //   this.tipo = tipo;
+    //   console.log(tipo);
+    // })
   }
 
 }

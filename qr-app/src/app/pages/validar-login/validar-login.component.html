@@ -28,6 +28,7 @@
           <ion-spinner name="dots"></ion-spinner>
           }@else { Iniciar sesion }
         </ion-button>
+        <ion-button routerLink="/register">Registrarse</ion-button>
       </div>
       <div *ngIf="loginFailed">
         <ion-item id="MensajeFail" [button]="true" routerLink="/recovery">
