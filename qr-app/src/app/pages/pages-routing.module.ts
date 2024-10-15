@@ -9,16 +9,18 @@ import { wardGuard } from '../guard/ward.guard';
 import { CamaraComponent } from './camara/camara.component';
 import { QrComponent } from './qr/qr.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component'; // Importa el AdminComponent
 
 const routes: Routes = [ /* Aqui se declaran las rutas de los componentes */
   {path: '', component:HomeComponent,canActivate: [wardGuard]},
   {path: 'profile', component: ProfileComponent, canActivate: [wardGuard]},
-  {path:'clases', component: ClassesComponent,canActivate: [wardGuard]},
+  {path: 'clases', component: ClassesComponent,canActivate: [wardGuard]},
   {path: 'recovery',component: RecoverypassComponent},
-  {path:'login',component:ValidarLoginComponent},
-  {path:'camara',component:CamaraComponent,canActivate: [wardGuard]},
-  {path:'qr',component:QrComponent,canActivate: [wardGuard]},
-  {path:'register',component:RegisterComponent},
+  {path: 'login',component:ValidarLoginComponent},
+  {path: 'camara',component:CamaraComponent,canActivate: [wardGuard]},
+  {path: 'qr',component:QrComponent,canActivate: [wardGuard]},
+  {path: 'register',component:RegisterComponent},
+  {path: 'admin', component: AdminComponent, canActivate: [wardGuard] },
 
 ];
 

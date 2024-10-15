@@ -1,18 +1,25 @@
 <ion-content class="home-container">
   <h1>Bienvenido, {{ nombreUsuario }}</h1>
 
-  <ng-container *ngIf="userType === 'docente'; else alumnoTemplate">
-    <h2>Asignaturas a cargo:</h2>
+  <ng-container *ngIf="userType === 'Profesor'; else alumnoTemplate">
+    <h2>Profesor Asignaturas a cargo:</h2>
     <ion-list>
       <ion-item *ngFor="let asignatura of asignaturasDocente">{{ asignatura }}</ion-item>
     </ion-list>
   </ng-container>
 
   <ng-template #alumnoTemplate>
-    <h2>Asignaturas inscritas:</h2>
-    <ion-list>
-      <ion-item *ngFor="let asignatura of asignaturasAlumno">{{ asignatura }}</ion-item>
-    </ion-list>
+    <ng-container *ngIf="userType === 'Estudiante'; else adminTemplate">
+      <h2>Estudiante Asignaturas inscritas:</h2>
+      <ion-list>
+        <ion-item *ngFor="let asignatura of asignaturasAlumno">{{ asignatura }}</ion-item>
+      </ion-list>
+    </ng-container>
+  </ng-template>
+
+  <ng-template #adminTemplate>
+    <h2>Bienvenido Administrador:</h2>
+    <p>Gestiona las asignaturas y usuarios desde la página de administración.</p>
   </ng-template>
 </ion-content>
 <app-nav-bar></app-nav-bar>

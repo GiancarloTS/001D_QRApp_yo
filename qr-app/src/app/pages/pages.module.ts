@@ -16,8 +16,10 @@ import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 
 
+
+
 @NgModule({
-  declarations: [   /* Aqui se declaran los componentes hijos */
+  declarations: [
     HomeComponent,
     ClassesComponent,
     ProfileComponent,

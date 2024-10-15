@@ -1,3 +1,4 @@
+// src/app/pages/home/home.component.ts
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 
@@ -7,31 +8,62 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  nombreUsuario: string;
-  userType: 'docente' | 'alumno' | null; // Tipo de usuario
-  asignaturasDocente: string[] = ['Matemáticas', 'Ciencias']; // Lista de asignaturas del docente
-  asignaturasAlumno: string[] = ['Historia', 'Geografía']; // Lista de asignaturas del alumno
+  nombreUsuario: string = '';
+  userType: 'admin' | 'Estudiante' | 'Profesor' | null = null;
+  asignaturasDocente: string[] = [];
+  asignaturasAlumno: string[] = [];
+  qrData: string | null = null; // Variable para almacenar el dato del QR
+  scanning: boolean = false; // Estado de escaneo
 
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.authService.usuario$.subscribe((usuario) => {
+    // Suscripción al nombre del usuario
+    this.authService.usuario$.subscribe((usuario: string) => {
       this.nombreUsuario = usuario;
+      console.log('Nombre del usuario:', usuario);
     });
 
-    this.authService.type$.subscribe((type) => {
+    // Suscripción al tipo de usuario
+    this.authService.type$.subscribe((type: 'admin' | 'Estudiante' | 'Profesor' | null) => {
       this.userType = type;
-      this.cargarAsignaturas(); // Cargar asignaturas al cambiar el tipo de usuario
+      console.log('Tipo de usuario:', type);
+      this.cargarAsignaturas();
     });
   }
 
   cargarAsignaturas() {
-    if (this.userType === 'docente') {
-      // Asignaturas para el docente (puedes modificar esto según tu lógica)
-      this.asignaturasDocente = ['Matemáticas', 'Ciencias', 'Historia'];
-    } else if (this.userType === 'alumno') {
-      // Asignaturas para el alumno (puedes modificar esto según tu lógica)
-      this.asignaturasAlumno = ['Biología', 'Literatura', 'Física'];
+    if (this.userType === 'Profesor') {
+      // Lógica para obtener asignaturas del profesor
+      this.asignaturasDocente = ['Matemáticas', 'Historia', 'Física']; // Ejemplo estático
+      console.log('Asignaturas del profesor:', this.asignaturasDocente);
+    } else if (this.userType === 'Estudiante') {
+      // Lógica para obtener asignaturas del alumno
+      this.asignaturasAlumno = ['Biología', 'Literatura', 'Química']; // Ejemplo estático
+      console.log('Asignaturas del alumno:', this.asignaturasAlumno);
+    } else if (this.userType === 'admin') {
+      // Opcional: lógica para admin
+      console.log('Usuario es admin. Redirigir o mostrar contenido especial.');
+      // Puedes redirigir a una página de admin o mostrar contenido específico
     }
+  }
+
+  generarQR(asignatura: string) {
+    // Genera un identificador único para la clase o asignatura
+    // Por simplicidad, usaremos una combinación de asignatura y timestamp
+    const uniqueId = `${asignatura}-${new Date().getTime()}`;
+    this.qrData = uniqueId;
+    console.log('QR generado:', this.qrData);
+  }
+
+  escaneoQR() {
+    // Por ahora, solo muestra un mensaje ya que la funcionalidad no está implementada
+    console.log('Botón de escaneo de QR presionado.');
+    // Puedes agregar un mensaje emergente o navegar a una página de escaneo en el futuro
+  }
+
+  logout() {
+    this.authService.logout();
+    // Opcional: redirigir al login
   }
 }
