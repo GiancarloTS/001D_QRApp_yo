@@ -8,7 +8,7 @@ export class CuentaService {
 
   private usernameSubject = new BehaviorSubject<string>('');
   private passwordSubject = new BehaviorSubject<string>('');
-  private typeSubject = new BehaviorSubject<string>('');
+  private typeSubject = new BehaviorSubject<string>(''); // Cambiado para manejar tipos de usuario
 
   user$ = this.usernameSubject.asObservable();
   pass$ = this.passwordSubject.asObservable();
@@ -41,11 +41,9 @@ export class CuentaService {
   }
 
   logout() {
-
     this.usernameSubject.next('');
     this.passwordSubject.next('');
     this.typeSubject.next('');
-
     console.log('Sesión cerrada correctamente.');
   }
 }

@@ -2,7 +2,14 @@
   <h1>Clases</h1>
   <div *ngIf="user">
     <p>Aquí están las clases disponibles:</p>
-    <!-- Aquí puedes agregar una lista de clases o cualquier otro contenido relevante -->
+    <div *ngIf="userType === 'docente'">
+      <p>Horario del docente:</p>
+      <!-- Contenido específico para el docente -->
+    </div>
+    <div *ngIf="userType === 'alumno'">
+      <p>Horario del alumno:</p>
+      <!-- Contenido específico para el alumno -->
+    </div>
   </div>
 
   <div *ngIf="!user">

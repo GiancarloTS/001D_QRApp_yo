@@ -19,4 +19,8 @@ export class ClassesComponent implements OnInit {
       this.user = cuenta;
     });
   }
+
+  get userType() {
+    return this.cuenta.GetType(); // Obtener el tipo de usuario
+  }
 }

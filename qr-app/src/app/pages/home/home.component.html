@@ -1,20 +1,18 @@
+<ion-content class="home-container">
+  <h1>Bienvenido, {{ nombreUsuario }}</h1>
 
+  <ng-container *ngIf="userType === 'docente'; else alumnoTemplate">
+    <h2>Asignaturas a cargo:</h2>
+    <ion-list>
+      <ion-item *ngFor="let asignatura of asignaturasDocente">{{ asignatura }}</ion-item>
+    </ion-list>
+  </ng-container>
 
-<ion-content>
-  <div class="welcome-message">
-    <h1>Bienvenido, {{ user }}</h1>
-    <p>¡Esta es tu página de inicio!</p>
-    <p>Desde aquí puedes acceder a las diferentes secciones de la app.</p>
-  </div>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Información Importante</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Asegúrate de registrar tu asistencia cuando llegues a clase.</p>
-      <p>Utiliza el código QR que el profesor generará para ello.</p>
-    </ion-card-content>
-  </ion-card>
+  <ng-template #alumnoTemplate>
+    <h2>Asignaturas inscritas:</h2>
+    <ion-list>
+      <ion-item *ngFor="let asignatura of asignaturasAlumno">{{ asignatura }}</ion-item>
+    </ion-list>
+  </ng-template>
 </ion-content>
 <app-nav-bar></app-nav-bar>
