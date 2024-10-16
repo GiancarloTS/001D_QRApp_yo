@@ -1,6 +1,7 @@
+// src/app/pages/pages.module.ts
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { PagesRoutingModule } from './pages-routing.module';
 import { HomeComponent } from './home/home.component';
 import { IonicModule } from '@ionic/angular';
@@ -14,9 +15,7 @@ import { CamaraComponent } from './camara/camara.component';
 import { QrComponent } from './qr/qr.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
-
-
-
+import { QRCodeModule } from 'angularx-qrcode'; // Importa QRCodeModule
 
 @NgModule({
   declarations: [
@@ -36,7 +35,7 @@ import { RegisterComponent } from './register/register.component';
     RouterLink,
     SharedModule,
     FormsModule,
-
-]
+    QRCodeModule // Agrega QRCodeModule aquí
+  ]
 })
 export class PagesModule { }

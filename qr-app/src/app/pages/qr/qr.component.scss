@@ -1,16 +1,12 @@
-#QR{
-  max-width: 100%;         /* Ajusta la imagen al tamaño del contenedor sin distorsionarla */
+/* src/app/pages/qr/qr.component.scss */
 
-}
-
-#imgcontainer{
+#imgcontainer {
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
+  justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin-top: 20px;
 }
-@media (min-width: 768px) {
-  #QR {
-    width: 400px; /* Establece un ancho fijo en pantallas más grandes */
-  }
+
+ion-button {
+  margin-top: 10px;
 }
