@@ -15,7 +15,7 @@
       </ion-item>
       <ion-item class="cajas">
         <ion-input
-          [(ngModel)]="user"
+          [(ngModel)]="nombrecompleto"
           label="Nombre completo"
           labelPlacement="floating"
         ></ion-input>
@@ -29,7 +29,7 @@
         ></ion-input>
       </ion-item>
       <ion-item id="select-list">
-        <ion-select aria-label="Carrera" placeholder="Seleccione carrera"   [(ngModel)]="type">
+        <ion-select aria-label="Carrera" placeholder="Seleccione carrera"   [(ngModel)]="carrera">
           <!-- Área de Tecnología de la Información y Comunicación -->
           <ion-select-option value="Analista Programador"
             >Analista Programador</ion-select-option
@@ -158,16 +158,23 @@
           >
         </ion-select>
       </ion-item>
-      <ion-radio-group   [(ngModel)]="type">
-        <ion-radio>Profesor</ion-radio>
-        <ion-radio>Estudiante</ion-radio>
+      <ion-radio-group  [(ngModel)]="type">
+        <ion-radio value="Profesor">Profesor</ion-radio>
+        <ion-radio value="Estudiante">Estudiante</ion-radio>
       </ion-radio-group>
       <div id="botn">
-        <ion-button>
+        <ion-button (click)="registrar()">
           @if (isLoading) {
           <ion-spinner name="dots"></ion-spinner>
           }@else { Registarse }
         </ion-button>
+      </div>
+      <div *ngIf="successMessage" style="color: rgb(0, 165, 0);" class="p-2">
+        <h2>{{ successMessage }}</h2>
+      </div>
+
+      <div *ngIf="errorMessage" style="color: rgb(194, 2, 2);" class="p-2">
+        <h2>{{ errorMessage }}</h2>
       </div>
     </div>
   </div>

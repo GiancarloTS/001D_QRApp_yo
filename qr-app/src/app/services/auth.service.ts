@@ -71,7 +71,7 @@ export class AuthService {
         throw new Error('El usuario ya existe');
       }
 
-      const res = await this.apicon.request('POST', url, 'users', usuario);
+      const res = await this.apicon.request('POST', url, '/',usuario);
       console.log('Usuario registrado con éxito', res);
       return res; // Devuelve la respuesta exitosa del registro
     } catch (error) {
@@ -84,7 +84,7 @@ export class AuthService {
   async obtenerUsuarios(): Promise<ApiUser[]> {
     const url = 'https://670daff5073307b4ee442ea8.mockapi.io/api';
     try {
-      const res = (await this.apicon.request('GET', url, 'users')) as Array<ApiUser>;
+      const res = (await this.apicon.request('GET', url, '/')) as Array<ApiUser>;
       return res; // Devuelve la lista de usuarios existentes
     } catch (error) {
       console.error('Error al obtener usuarios:', error);
